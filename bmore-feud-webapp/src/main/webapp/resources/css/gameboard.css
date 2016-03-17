@@ -1,0 +1,157 @@
+.container-navbar-pad {
+    margin-bottom: 0px;
+    padding-top: 10px;
+    width: 975px;
+}
+
+.gameboard {
+    background: #FCCF27;
+}
+
+.value-section {
+    background: none repeat scroll 0 0 darkblue;
+    border: 1px double;
+    border-radius: 10px;
+    margin-left: -15px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-top: 10px;
+    width: 975px;
+}
+
+.value-row {
+    margin-left: -15px;
+    padding-bottom: 5px;
+}
+
+.value-visible {
+    background: none repeat scroll 0 0 #133AD8;
+    font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;;
+    border: 5px solid white;
+    border-radius: 3px;
+    color: white;
+    font-size: 50px;
+    line-height: 100px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.value-available {
+    background: none repeat scroll 0 0 #56aced;
+    border: 5px solid white;
+    border-radius: 3px;
+    color: white;
+    font-size: 50px;
+    line-height: 100px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.value-available-number {
+    background: none repeat scroll 0 0 darkblue;
+    border: 5px double blue;
+    border-radius: 800px;
+    color: white;
+    float: none;
+    font-size: 50px;
+    line-height: 55px;
+    margin: 15px auto 20px;
+    text-align: center;
+    width: 60px;
+    font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+}
+
+.value-not-available {
+    background: none repeat scroll 0 0 #56aced;
+    border: 5px solid white;
+    border-radius: 3px;
+    color: #56aced;
+    font-size: 50px;
+    line-height: 100px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.value-points {
+    background: none repeat scroll 0 0 black;
+    float: right;
+    margin-left: 0px;
+}
+
+.value-value-sm {
+    font-size:50px;
+    line-height: 100px;
+    margin-left:0px;
+}
+
+.value-value-md {
+    font-size:40px;
+    line-height: 100px;
+    margin-left:0px;
+
+}
+
+.value-value-lg {
+    font-size:30px;
+    line-height: 100px;
+    margin-left:0px;
+}
+
+.value-value-xl {
+    font-size:30px;
+    line-height: 50px;
+    margin-left:0px;
+}
+
+.incorrect {
+    position: absolute;
+    left:50%;
+    margin-left: -214px;
+    height: 100px;
+    top: 100px;
+    width: 800px;
+}
+
+.incorrect-count-2 {
+    margin-left: -395px;
+}
+
+.incorrect-count-3 {
+    margin-left: -555px;
+    width: 1200px;
+}
+
+.incorrect-x {
+    border: 20px solid red;
+    color: red;
+    font-size: 400px;
+    font-weight: bold;
+    line-height: 260px;
+    margin-left: 50px;
+    margin-right: auto;
+    padding-bottom: 16px;
+    padding-right: 52px;
+    text-align: center;
+}
+
+@font-face {
+    font-family: "Scoreboard Font";
+    src: url(../fonts/rounded_led_board-7.ttf) format("truetype");
+}
+
+.score-board {
+    background: none repeat scroll 0 0 #333333;
+    border: 5px solid #aaaaaa;
+    border-radius: 5px;
+    color: white;
+    font-family: "Scoreboard Font";
+    font-size: 45px;
+    line-height: 20px;
+    margin-left: 380px;
+    margin-right: 390px;
+    margin-top: 5px;
+    padding-bottom: 10px;
+    padding-top: 50px;
+    text-align: right;
+}
+

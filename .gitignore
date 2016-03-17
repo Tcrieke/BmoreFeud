@@ -1,0 +1,6 @@
+
+bmore-feud-webapp/.idea/*
+
+*.class
+bmore-feud-webapp/target/*
+*.iml

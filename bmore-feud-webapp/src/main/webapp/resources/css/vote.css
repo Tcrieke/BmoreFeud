@@ -1,0 +1,57 @@
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+
+    align-items: center;
+}
+
+.vote {
+    background: #FCCF27;
+}
+
+.main-section {
+    background: none repeat scroll 0 0 darkblue;
+    border: 1px double;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+.poll-box {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.option-row {
+    margin-left: 0px;
+}
+
+.poll-row {
+    margin-left: 0px;
+    background: none repeat scroll 0 0 #56aced;
+    border: 2px solid white;
+    border-radius: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.poll-cell {
+    margin-left: 0px;
+    margin-right: 0px;
+    color: black;
+    font-size: 20px;
+    line-height: 22px;
+    text-align: left;
+    vertical-align: middle;
+    font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+}
+
+.poll-count-cell {
+    text-align: center;
+}
+
+.poll-vote-cell {
+    text-align: center;
+}

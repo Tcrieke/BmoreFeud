@@ -1,0 +1,148 @@
+.gameboard {
+    background: #FCCF27;
+}
+
+.category-title {
+    padding-top: 15px;
+    font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+}
+
+.team-scoreboard {
+    background: none repeat scroll 0 0 #133AD8;
+    font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+    border: 5px solid black;
+    border-radius: 3px;
+    color: white;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    min-height: 40;
+    margin-left: 0px;
+    padding-right: 5px;
+}
+
+.team-arrow {
+    color:black;
+    text-align: center;
+    font-size: 30px;
+    line-height: 40px;
+    margin-left: 0px;
+    padding-right: 5px;
+    margin-top: -20px;
+}
+
+.team-arrow-enabled {
+    color:black;
+}
+
+.team-arrow-disabled {
+    color:#c9a51f;
+}
+
+.game-mode {
+    background: none repeat scroll 0 0 #133AD8;
+    font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;;
+    border: 5px solid black;
+    border-radius: 3px;
+    color: white;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    min-height: 40;
+    margin-left: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.game-mode-faceoff {
+    background: none repeat scroll 0 0 greenyellow;
+    color: black;
+}
+.game-mode-normal {
+    background: none repeat scroll 0 0 #133AD8;
+    color: white;
+}
+.game-mode-rebuttal {
+    background: none repeat scroll 0 0 darkred;
+    color: white;
+}
+
+.top-section {
+    margin-top: 15px;
+}
+
+.main-section {
+    margin-top: 15px;
+}
+
+.field-container {
+    margin-left: 0px;
+}
+
+.field-button-row {
+    border: 5px solid;
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+.field-button-area {
+    margin-left: 2px;
+}
+
+.field-button {
+    width:200px;
+    text-align: center;
+}
+
+.incorrect {
+    margin-left: 135px;
+    height: 106px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.incorrect-count-2 {
+    margin-left: 62px;
+    height: 106px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.incorrect-count-3 {
+    margin-left: -15px;
+    height: 106px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.incorrect-x {
+    border: 10px solid red;
+    color: red;
+    font-size: 130px;
+    font-weight: bold;
+    line-height: 80px;
+    margin-left: 40px;
+    margin-right: auto;
+    padding-bottom: 6px;
+    padding-right: 18px;
+    width: 70px;
+}
+
+.incorrect-button-row {
+    margin-left: 0px;
+    padding-bottom: 10px;
+}
+
+.incorrect-area {
+    border: 5px solid;
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+.game-options-area {
+    border: 5px solid;
+    margin-left: 0;
+    padding: 25px;
+}

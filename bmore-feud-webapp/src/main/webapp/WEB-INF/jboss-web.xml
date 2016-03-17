@@ -1,0 +1,29 @@
+<jboss-web>
+	<context-root>bmorefeud</context-root>
+	<valve>
+       <class-name>com.bah.cdssf.valve.CertificateLogSetupValve</class-name>
+    </valve>
+    <valve>
+        <class-name>org.apache.catalina.valves.AccessLogValve</class-name>
+        <param>
+            <param-name>prefix</param-name>
+            <param-value>bmore_fued_log.</param-value>
+        </param>
+        <param>
+            <param-name>suffix</param-name>
+            <param-value>.log</param-value>
+        </param>
+        <param>
+            <param-name>pattern</param-name>
+            <param-value>%h %l %u %t %r %s %b %{User-Agent}i  %{example.name}r %{example.email}r %{example.test}r %{JSESSIONID}c</param-value>
+        </param>
+        <param>
+            <param-name>directory</param-name>
+            <param-value>/Users/tcrieke</param-value>
+        </param>
+        <param>
+            <param-name>resolveHosts</param-name>
+            <param-value>false</param-value>
+        </param>
+    </valve>
+</jboss-web>

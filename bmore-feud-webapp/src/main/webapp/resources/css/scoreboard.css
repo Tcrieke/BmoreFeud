@@ -1,0 +1,52 @@
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+
+    align-items: center;
+}
+
+.team-scoreboard {
+    background: none repeat scroll 0 0 #133ad8;
+    border-radius: 3px;
+    color: white;
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    font-size: 240px;
+    height: 100%;
+    line-height: 240px;
+    margin-left: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.team-name {
+    margin-left: 0px;
+    width:100%;
+    padding-top: 200px;
+    font-size: 240px;
+}
+
+.team-name-sm {
+    margin-left: 0px;
+    width:100%;
+    padding-top: 210px;
+    font-size: 180px;
+}
+
+.team-name-md {
+    margin-left: 0px;
+    width:100%;
+    padding-top: 220px;
+    font-size: 120px;
+}
+
+.team-name-lg {
+    margin-left: 0px;
+    width:100%;
+    padding-top: 230px;
+    font-size: 80px;
+}
+
+.team-score {
+    margin-left: 0px;
+    width:100%;
+}

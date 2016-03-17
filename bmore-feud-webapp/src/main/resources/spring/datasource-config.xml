@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        "
+        default-autowire="byName">
+
+    <!--This is an example of how to tie it into a MySQL Database-->
+
+    <!--<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close">
+        <property name="driverClass" value="${jdbc.driverClass}" />
+        <property name="jdbcUrl" value="${jdbc.url}" />
+        <property name="user" value="${jdbc.user}" />
+        <property name="password" value="${jdbc.password}" />
+
+
+        <property name="initialPoolSize"
+                  value="${jdbc.pool.initialPoolSize:10}" />
+        <property name="acquireIncrement"
+                  value="${jdbc.pool.acquireIncrement:10}" />
+        <property name="minPoolSize"
+                  value="${jdbc.pool.minPoolSize:10}" />
+        <property name="maxPoolSize"
+                  value="${jdbc.pool.maxPoolSize:200}" />
+        <property name="maxIdleTime"
+                  value="${jdbc.pool.maxIdleTime:1800}" />
+        <property name="maxStatements"
+                  value="${jdbc.pool.maxStatements:200}" />
+        <property name="autoCommitOnClose"
+                  value="${jdbc.pool.autoCommitOnClose:true}" />
+    </bean>-->
+
+
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close">
+        <property name="driverClass" value="org.sqlite.JDBC" />
+        <property name="jdbcUrl" value="jdbc:sqlite:bmore_feud_db.sqlite" />
+        <property name="user" value="" />
+        <property name="password" value="" />
+    </bean>
+
+
+    <bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <constructor-arg name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <tx:annotation-driven proxy-target-class="true" transaction-manager="dataSourceTransactionManager" />
+</beans>

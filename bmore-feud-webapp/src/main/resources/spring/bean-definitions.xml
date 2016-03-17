@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byName">
+
+    <import resource="classpath:spring/datasource-config.xml"/>
+
+    <bean id="categoryDao" class="com.rieke.bmore.feud.category.CategoryDao"
+          scope="singleton">
+        <constructor-arg index="0" ref="dataSource"/>
+    </bean>
+    <bean id="categoryService" class="com.rieke.bmore.feud.category.CategoryService"
+          scope="singleton">
+        <constructor-arg index="0" ref="categoryDao"/>
+    </bean>
+
+    <bean id="importService" class="com.rieke.bmore.feud.importer.ImportService"
+          scope="singleton">
+        <constructor-arg index="0" ref="categoryService"/>
+    </bean>
+
+    <bean id="databaseSchema" class="com.rieke.bmore.feud.database.SQLiteDataSource"
+          scope="singleton">
+        <constructor-arg index="0" ref="dataSource"/>
+        <constructor-arg index="1" ref="importService"/>
+    </bean>
+
+    <bean id="audienceService" class="com.rieke.bmore.feud.audience.AudienceService"
+          scope="singleton">
+    </bean>
+
+    <bean id="adminService" class="com.rieke.bmore.feud.admin.AdminService"
+          scope="singleton">
+        <constructor-arg index="0" ref="categoryService"/>
+        <constructor-arg index="1" ref="audienceService"/>
+    </bean>
+
+
+</beans>
