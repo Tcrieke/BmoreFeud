@@ -1,3 +1,38 @@
+'use strict';
+
+var app = angular.module('app', []);
+
+app.controller('Banner', function($scope) {
+    $scope.title = "No Title";
+});
+
+app.directive('focusMe', function($timeout) {
+    return {
+        link: function(scope, element, attrs) {
+            scope.$watch(attrs.focusMe, function(value) {
+                if(value === true) {
+                    console.log('value=',value);
+                    //$timeout(function() {
+                    element[0].focus();
+                    scope[attrs.focusMe] = false;
+                    //});
+                }
+            });
+        }
+    };
+});
+
+app.directive('ngEnter', function () {
+    return function (scope, element, attrs) {
+        element.bind("keydown keypress", function (event) {
+            if(event.which === 13) {
+                element[0].blur();
+                event.preventDefault();
+            }
+        });
+    };
+});
+
 app.controller('Judge', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
 
     $scope.title = "Bmore Fun (Admin)";

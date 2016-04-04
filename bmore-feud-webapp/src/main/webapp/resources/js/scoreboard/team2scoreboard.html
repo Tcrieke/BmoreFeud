@@ -1,0 +1,14 @@
+<span id="site" class="jumbotron">
+    <div class="team-scoreboard text-center vertical-center">
+        <row>
+            <div ng-class="{'span12 team-name':true,'team-name-sm':gameboard.team2Name.length>9,'team-name-md':gameboard.team2Name.length>13,'team-name-lg':gameboard.team2Name.length>19}">
+                {{gameboard.team2Name}}
+            </div>
+        </row>
+        <row>
+            <div class="span12 team-score">
+                {{gameboard.team2Score}}
+            </div>
+        </row>
+    </div>
+</span>
