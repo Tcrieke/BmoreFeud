@@ -11,6 +11,12 @@ app.config(function($routeProvider) {
             css: ['resources/css/gameboard.css']
         })
 
+        .when('/fastmoney', {
+            templateUrl : 'resources/js/fastmoney/fastmoney.html',
+            controller  : 'FastMoney',
+            css: ['resources/css/fastmoney.css']
+        })
+
         //Removed and added to its own jsp so spring security can manage it
         //
         //.when('/judge', {
@@ -33,7 +39,7 @@ app.config(function($routeProvider) {
 
         .when('/host', {
             templateUrl : 'resources/js/host/host.html',
-            controller  : 'Scoreboard',
+            controller  : 'Host',
             css: ['resources/css/host.css']
         })
 
@@ -47,6 +53,7 @@ app.config(function($routeProvider) {
         .otherwise({
             redirectTo: '/board'
         });
+
 });
 
 app.controller('Banner', function($scope) {

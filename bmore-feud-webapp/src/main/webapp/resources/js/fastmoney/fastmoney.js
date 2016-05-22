@@ -1,61 +1,65 @@
-app.controller('FastMoney', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
+app.controller('FastMoney', ['$scope', '$http', '$timeout', '$location', function($scope, $http, $timeout, $location) {
 
     $scope.title = "Bmore Feud (Fast Money)";
 
-    $scope.showX = false;
     $scope.numberOfRows = 5;
-    $scope.numberOfColumns = 1;
-    $scope.roundScore = 0;
-    $scope.player = 1;
+    $scope.numberOfColumns = 2;
+    $scope.totalScore = 0;
+    $scope.player1 = true;
+    $scope.player2 = true;
+    $scope.active = true;
 
     $scope.blankText = "***************";
 
-    $scope.valueRows = [];
+    $scope.answerRows = [];
     for(var i = 0; i < $scope.numberOfRows;i++) {
-        $scope.valueRows[i] = {};
-        $scope.valueRows[i].valueFields = [];
+        $scope.answerRows[i] = {};
+        $scope.answerRows[i].answerFields = [];
         for(var j =0; j<$scope.numberOfColumns;j++) {
-            var col = i+(j*($scope.numberOfRows));
-            $scope.valueRows[i].valueFields.push({number: col+1, active: false, visible: false, value: ""});
+            var col = (i*$scope.numberOfColumns)+j;
+            $scope.answerRows[i].answerFields.push({number: col+1, visible: false, valueVisible: false, answer: "", points: 0});
         }
     }
 
     var getGameboard = function() {
-        $http.get("/bmorefeud/fastmoney").success(function (response) {
-            var gameboard = response.gameboard;
-            $scope.player = response.player;
-            var responses = gameboard.responses[$scope.player-1];
+        var onPage = ($location.path()=="/fastmoney");
 
-            var playSound = false;
+        if(onPage) {
+            $http.get("/bmorefeud/fastmoney").success(function (response) {
+                var gameboard = response.gameboard;
 
-            $scope.roundScore = gameboard.roundScore;
-
-            for(var i = 0; i < $scope.valueRows.length;i++) {
-                for(var  j = 0; j<$scope.numberOfColumns;j++) {
-                    var col = i+(j*($scope.numberOfRows));
-                    var field = $scope.valueRows[i].valueFields[j];
-                    var response = responses[col];
-                    if(!field.active && response.active) {
-                        if(response.value=='') {
-                            playIncorrectSound();
-                        }
-                        playSound = true;
-                    } else if(!field.visible && value.visible) {
-                        if(response.points>0) {
-                            playCorrectSound();
-                        } else {
-                            playIncorrectSound();
-                        }
-                    }
-
-                    field.active=response.active;
-                    field.visible=response.visible;
-                    field.value=response.value;
-                    field.points=response.points;
+                if (gameboard.active === false) {
+                    $scope.active = false;
+                    window.location = '/bmorefeud/#/board';
+                    return;
                 }
-            }
-        });
-        $timeout(getGameboard, 501);
+
+                $scope.totalScore = gameboard.totalScore;
+                $scope.player1 = gameboard.player1.visible;
+                $scope.player2 = gameboard.player2.visible;
+
+                for (var i = 0; i < $scope.answerRows.length; i++) {
+                    for (var j = 0; j < $scope.numberOfColumns; j++) {
+                        var field = $scope.answerRows[i].answerFields[j];
+                        var answer = (j == 0 ? gameboard.player1 : gameboard.player2).answers[i];
+                        if (!field.valueVisible && answer.valueVisible) {
+                            if (answer.points == 0) {
+                                playIncorrectSound();
+                            } else {
+                                playCorrectSound();
+                            }
+                        }
+
+                        field.visible = answer.visible;
+                        field.valueVisible = answer.valueVisible;
+                        field.answer = answer.answer;
+                        field.points = answer.points;
+                    }
+                }
+            });
+        }
+
+        $timeout(getGameboard, (onPage?501:2000));
     };
 
     var incorrectSound = null;
@@ -79,5 +83,15 @@ app.controller('FastMoney', ['$scope', '$http', '$timeout', function($scope, $ht
         }
         correctSound.play();
     }
+
+    $scope.showField = function(answerField) {
+        if(answerField.number%2==0) {
+            return $scope.player2;
+        } else {
+            return $scope.player1;
+        }
+    }
+
+    getGameboard();
 }]);
 

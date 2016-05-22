@@ -1,6 +1,8 @@
 package com.rieke.bmore.feud.controller;
 
 import com.rieke.bmore.feud.admin.AdminService;
+import com.rieke.bmore.feud.board.Gameboard;
+import com.rieke.bmore.feud.fastmoney.FastMoney;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -83,7 +85,7 @@ public class AdminController {
         visible = (visible==null?true:visible);
 
         Map<String, Object> responseMap = new HashMap<String, Object>();
-        adminService.setValueVisible(value,visible);
+        adminService.setValueVisible(value, visible);
         responseMap
                 .put("gameboard", adminService.getGameBoard());
         return new ResponseEntity<Map<String, Object>>(responseMap,
@@ -124,6 +126,19 @@ public class AdminController {
         responseMap
                 .put("gameboard", adminService.getGameBoard());
         return new ResponseEntity<Map<String, Object>>(responseMap,
+                HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/fast_money", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<Map<String, Object>> familyFeud(HttpServletRequest request) {
+
+        Map<String, Object> responseMap = new HashMap<>();
+        FastMoney.active=true;
+        Gameboard.active=false;
+
+        responseMap
+                .put("gameboard", adminService.getGameBoard());
+        return new ResponseEntity<>(responseMap,
                 HttpStatus.OK);
     }
 }

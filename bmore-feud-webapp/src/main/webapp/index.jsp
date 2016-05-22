@@ -39,6 +39,8 @@
 <script type="text/javascript" src="resources/js/host/host.js"></script>
 <script type="text/javascript" src="resources/js/vote/vote.js"></script>
 <script type="text/javascript" src="resources/js/scoreboard/scoreboard.js"></script>
+<script type="text/javascript" src="resources/js/fastmoney/fastmoney.js"></script>
+
 
 </body>
 

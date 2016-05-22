@@ -2,8 +2,11 @@
     <div class="category text-center vertical-center">
         <row>
             <div class="span12 category-name">
-                {{gameboard.category.name}}
+                {{category.name}}
             </div>
+            <button type="button" ng-click="nextCategory()" ng-class="{'btn field-button':true}" ng-show="isFastMoney">
+                Next
+            </button>
         </row>
     </div>
 </span>

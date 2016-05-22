@@ -1,0 +1,29 @@
+<span id="site" class="ng-cloak">
+    <div class="container container-navbar-pad">
+        <container>
+            <div ng-class="{'answer-section':player1==player2, 'answer-section-single':player1!=player2}">
+                <div class="row answer-row " style="position:relative" ng-repeat="answerRow in answerRows">
+                    <div ng-class="{'span6':true, 'answer-visible': answerField.visible, 'answer-not-visible':!answerField.visible}" style="text-align: center" ng-repeat="answerField in answerRow.answerFields" ng-show="showField(answerField)">
+                        <row ng-show="answerField.visible">
+                            <div ng-class="{'span5':true, 'answer-value-sm':answerField.answer.length<9,'answer-value-md':answerField.answer.length>11 && answerField.answer.length<15,'answer-value-lg':answerField.answer.length>14 && answerField.answer.length<18,'answer-value-xl':answerField.answer.length>17}" ng-show="answerField.visible">{{answerField.answer}}</div>
+                            <div class="span1 answer-points" ng-show="answerField.valueVisible">{{answerField.points}}</div>
+                        </row>
+                        <row ng-hide="answerField.visible">
+                            <div class="span5" ng-hide="answerField.visible">{{blankText}}</div>
+                        </row>
+                    </div>
+                </div>
+            </div>
+            <div class="score-section">
+                <div class="score-board">
+                    {{totalScore}}
+                </div>
+                <div class="clock-timer">
+                    {{countDownTime}}
+                </div>
+            </div>
+
+        </container>
+    </div>
+
+</span>

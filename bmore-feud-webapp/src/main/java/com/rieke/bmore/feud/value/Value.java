@@ -20,6 +20,14 @@ public class Value implements Serializable {
         acceptedValues = new ArrayList<String>();
     }
 
+    public Value(Value value) {
+        id = value.getId();
+        this.value = value.getValue();
+        points = value.getPoints();
+        acceptedValues = value.getAcceptedValues();
+        visible = new Boolean(value.isVisible());
+    }
+
     public Value(String value, int points, List<String> acceptedValues) {
         this.value = value;
         this.points = points;

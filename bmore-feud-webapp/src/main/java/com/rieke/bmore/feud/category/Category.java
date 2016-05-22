@@ -17,7 +17,16 @@ public class Category implements Serializable{
     private List<Value> values;
 
     public Category() {
-        values = new ArrayList<Value>();
+        values = new ArrayList<>();
+    }
+
+    public Category(Category category) {
+        id = category.getId();
+        name = new String(category.getName());
+        values = new ArrayList<>();
+        for(Value value:category.getValues()) {
+            values.add(new Value(value));
+        }
     }
 
     public Category(String name, List<Value> values) {

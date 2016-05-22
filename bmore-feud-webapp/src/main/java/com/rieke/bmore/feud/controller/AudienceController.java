@@ -1,8 +1,6 @@
 package com.rieke.bmore.feud.controller;
 
-import com.rieke.bmore.feud.admin.AdminService;
 import com.rieke.bmore.feud.audience.AudienceService;
-import com.rieke.bmore.feud.audience.PollCategory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

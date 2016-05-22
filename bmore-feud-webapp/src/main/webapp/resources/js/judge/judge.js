@@ -190,6 +190,12 @@ app.controller('Judge', ['$scope', '$http', '$timeout', function($scope, $http, 
         });
     };
 
+    $scope.toFastMoney = function() {
+        $http.get("/bmorefeud/admin/fast_money").success(function (response) {
+            window.location = '/bmorefeud/judge-fastmoney.jsp';
+        });
+    };
+
 }]);
 
 

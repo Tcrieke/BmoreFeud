@@ -23,3 +23,17 @@
     padding-top: 100px;
     font-size: 60px;
 }
+
+
+.field-button {
+    width: 120px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.field-button-area {
+    margin-left: 2px;
+}

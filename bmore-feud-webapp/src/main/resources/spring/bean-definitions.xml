@@ -36,5 +36,9 @@
         <constructor-arg index="1" ref="audienceService"/>
     </bean>
 
+    <bean id="fastMoneyService" class="com.rieke.bmore.feud.admin.FastMoneyAdminService"
+          scope="singleton">
+        <constructor-arg index="0" ref="categoryService"/>
+    </bean>
 
 </beans>

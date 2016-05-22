@@ -16,6 +16,8 @@ public class Gameboard implements Serializable {
 
     private static final long serialVersionUID = 0L;
 
+    public static boolean active = true;
+
     public static Category category = null;
     public static GameMode gameMode = null;
     public static int incorrectCount = 0;
@@ -152,5 +154,13 @@ public class Gameboard implements Serializable {
             }
         }
         return pointsScored;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        Gameboard.active = active;
     }
 }
